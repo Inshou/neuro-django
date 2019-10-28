@@ -1,3 +1,5 @@
+Django based on ruddra docker git project and Tensorflow-1.14-py3-jupyter docker image
+
 # Deploy Django using Nginx, Celery, Redis and Postgresql with Docker
 
 A boilerplate to deploy Django with cool stuff. Also serves as an example project from these tutorial:
