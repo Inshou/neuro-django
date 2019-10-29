@@ -1,4 +1,4 @@
-# Tensorflow-1.14-py3-jupyter docker image based Ruddras Docker-Django project
+# Based on Tensorflow-1.14-py3-jupyter docker image Ruddras Docker-Django project
 
 Tensorflow-1.14 (https://hub.docker.com/r/tensorflow/tensorflow/) \
 Ruddra Docker-django (https://github.com/ruddra/docker-django)
