@@ -1,5 +1,12 @@
 # Django based on ruddra docker git project and Tensorflow-1.14-py3-jupyter docker image
 
+Tensorflow-1.14 based on ubuntu 
+Ruddra Docker-django based on alpine
+
+apk shell command will not work use apt-get
+
+# RUDDRA Docker-Django instuctions:
+
 ## Deploy Django using Nginx, Celery, Redis and Postgresql with Docker
 
 A boilerplate to deploy Django with cool stuff. Also serves as an example project from these tutorial:
