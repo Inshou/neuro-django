@@ -1,9 +1,9 @@
-# Based on Tensorflow-1.14-py3-jupyter docker image Ruddras Docker-Django project
+# Based on Tensorflow-1.14-py3-jupyter docker image Ruddra Docker-Django project
 
 Tensorflow-1.14 (https://hub.docker.com/r/tensorflow/tensorflow/) \
 Ruddra Docker-django (https://github.com/ruddra/docker-django)
 
-**Tensorflow** image based on ubuntu and Ruddras **Docker-Django** based on alpine linux so\
+**Tensorflow** image based on ubuntu and Ruddra **Docker-Django** based on alpine linux so\
 **apk** shell command will not work use **apt-get**
 
 
