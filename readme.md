@@ -7,7 +7,8 @@ Ruddra Docker-django (https://github.com/ruddra/docker-django)
 **apk** shell command will not work use **apt-get**
 
 
-# RUDDRA Docker-Django instuctions:
+
+# Ruddra Docker-Django README:
 
 ## Deploy Django using Nginx, Celery, Redis and Postgresql with Docker
 
