@@ -4,7 +4,9 @@ Tensorflow-1.14 (https://hub.docker.com/r/tensorflow/tensorflow/)
 Ruddra Docker-django (https://github.com/ruddra/docker-django) based on alpine
 
 Tensorflow based on ubuntu and Ruddras Docker-Django based on alpine so
-__apk shell command will not work use apt-ge__
+
+**apk shell command will not work use apt-ge**
+
 
 # RUDDRA Docker-Django instuctions:
 
