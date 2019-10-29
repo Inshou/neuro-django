@@ -54,7 +54,14 @@ RUN pip install --no-cache-dir -r /scripts/requirements.pip
 # *install psycopg2 if you don't have it requirements.pip*
 # RUN pip install --no-cache-dir psycopg2
 
-# removing temporary packages from docker and removing cache 
+# removing temporary packages from docker and removing cache
+RUN apt-get remove -y gcc \
+    python3-dev \
+    musl-dev \
+    postgresql-server-dev-all \
+    zlib1g-dev \
+    libjpeg8-dev
+
 #RUN apk del build-deps && \
 RUN find -type d -name __pycache__ -prune -exec rm -rf {} \; && \
     rm -rf ~/.cache/pip && rm -rf /var/lib/apt/lists/*
