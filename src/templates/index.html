@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <title>Neuro Test</title>
+    <link rel="stylesheet" media="all" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" media="all" href="{% static 'css/styles.css' %}" type="text/css">
+
+</head>
+<body>
+    <p></p>
+    <form enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+    <div class="container">
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-primary" value="Отправить">
+    </div>
+</form>
+</body>
+</html>

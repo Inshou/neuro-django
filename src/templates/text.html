@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Результат</title>
+    <link rel="stylesheet" media="all" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" media="all" href="{% static 'css/styles.css' %}" type="text/css">
+</head>
+    <div class="container">
+        <p></p>
+        <h1>
+            {{ my_text }}
+        </h1>
+        <p></p>
+        <a href="/"><button class="btn btn-primary">Назад</button></a>
+    </div>
+</body>
+</html>

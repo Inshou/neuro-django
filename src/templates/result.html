@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Результат</title>
+    <link rel="stylesheet" media="all" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" media="all" href="{% static 'css/styles.css' %}" type="text/css">
+</head>
+    <div class="container">
+        <p></p>
+        <img src="{{ my_path }}" width="400">
+        <h1>
+            Результат нейросети:
+        </h1>
+        <h1>
+            {{ my_text_1 }}
+        </h1>
+        <h1>
+            {{ my_text_2 }}
+        </h1>
+        <h1>
+            Выберите точный экспертный ответ:
+        </h1>
+        <form enctype="multipart/form-data" action="result.html" method="POST">
+        {% csrf_token %}
+            {{ form.as_p }}
+            <input type="hidden" name="image_name" value = "{{ image_name }}">
+        <input type="submit" class="btn btn-primary" value="Ответить">
+        </form>
+        <p></p>
+        <a href="/"><button class="btn btn-primary">Назад</button></a>
+    </div>
+</body>
+</html>
