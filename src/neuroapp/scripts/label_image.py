@@ -32,7 +32,6 @@ def load_graph(model_file):
 
   with open(model_file, "rb") as f:
     graph_def.ParseFromString(f.read())
-    print('Load file >> {}'.format(f.read())
   with graph.as_default():
     tf.import_graph_def(graph_def)
 
