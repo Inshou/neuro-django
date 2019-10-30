@@ -19,10 +19,10 @@ def index(request):
             #os.remove(image_path)
             #return HttpResponse("<h2>Результат проверки: {0}</h2>".format(image_path))
             return render(request, "result.html", {"my_text_1": "{0}: {1}%".format('thumb_up', round((evaluate['thumb_up']*100),3)),
-            #                                       "my_text_2": "{0}: {1}%".format('ok', round((evaluate['ok']*100),3)),
-            #                                       "my_path": "/media/"+os.path.basename(image_path),
-            #                                       "image_name": os.path.basename(image_path),
-            #                                       "form": resultform})
+                                                   "my_text_2": "{0}: {1}%".format('ok', round((evaluate['ok']*100),3)),
+                                                   "my_path": "/media/"+os.path.basename(image_path),
+                                                   "image_name": os.path.basename(image_path),
+                                                   "form": resultform})
         return HttpResponse("<h2>Произошла ошибка {0}</h2>".format(""))
     else:
         userform = UserForm()
