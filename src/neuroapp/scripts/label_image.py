@@ -28,6 +28,8 @@ def load_graph(model_file):
   graph = tf.Graph()
   graph_def = tf.GraphDef()
 
+  print("label_image.py >> graph_def {}".format(graph_def))
+
   with open(model_file, "rb") as f:
     graph_def.ParseFromString(f.read())
   with graph.as_default():
