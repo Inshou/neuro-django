@@ -40,7 +40,6 @@ def load_graph(model_file):
   with graph.as_default():
     tf.import_graph_def(graph_def)
 
-  print('graph >> {}'.format(graph))
   return graph
 
 def read_tensor_from_image_file(file_name, input_height=299, input_width=299,
