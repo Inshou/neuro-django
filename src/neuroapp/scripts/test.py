@@ -16,7 +16,7 @@ def test_func(file_name):
     input_std = 255
     input_layer = "Mul"
     output_layer = "final_result"
-    print('BEFORE LOAD GRAPH {} {} {} {} {} {} {} {}'.format(model_file, label_file, input_height, input_width, input_mean, input_std, input_layer, output_layer)
+    print('BEFORE LOAD GRAPH {} {} {} {} {} {} {} {}'.format(model_file, label_file, input_height, input_width, input_mean, input_std, input_layer, output_layer))
     graph = load_graph(model_file)
 
     print('MODEL FILE: {}'.format(model_file))
