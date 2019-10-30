@@ -17,7 +17,6 @@ def test_func(file_name):
     input_layer = "Mul"
     output_layer = "final_result"
 
-    print('BEFORE LOAD GRAPH >> '.format(model_file))
     graph = load_graph(model_file)
 
     t = read_tensor_from_image_file(file_name,

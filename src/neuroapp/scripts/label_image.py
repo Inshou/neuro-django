@@ -28,14 +28,10 @@ def load_graph(model_file):
   graph = tf.Graph()
   graph_def = tf.compat.v1.GraphDef()
 
-  print("label_image.py >> graph_def {}".format(graph_def))
-
   with open(model_file, "rb") as f:
     fileContent = f.read()
 
-  print("BEFORE MODEL PARSE")
   graph_def.ParseFromString(fileContent)
-  print("AFTER MODEL PARSE")
 
   with graph.as_default():
     tf.import_graph_def(graph_def)
