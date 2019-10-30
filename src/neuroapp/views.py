@@ -17,8 +17,8 @@ def index(request):
             evaluate = test_func(image_path)
             resultform = ResultForm(initial={"answer": "thumb_up"})
             #os.remove(image_path)
-            #return HttpResponse("<h2>Результат проверки: {0}</h2>".format(evaluate))
-            return render(request, "result.html", {"my_text_1": "{0}: {1}%".format('thumb_up', round((evaluate['thumb_up']*100),3)),
+            return HttpResponse("<h2>Результат проверки: {0}</h2>".format(evaluate))
+            #return render(request, "result.html", {"my_text_1": "{0}: {1}%".format('thumb_up', round((evaluate['thumb_up']*100),3)),
                                                    "my_text_2": "{0}: {1}%".format('ok', round((evaluate['ok']*100),3)),
                                                    "my_path": "/media/"+os.path.basename(image_path),
                                                    "image_name": os.path.basename(image_path),
