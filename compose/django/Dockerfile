@@ -1,7 +1,7 @@
 # More Datascience frendly gist can be found here: https://gist.github.com/ruddra/870d7a51238ddfa4b50375086c12a4f5
 # pull official python alpine image
 #FROM python:3.7-alpine
-FROM tensorflow/tensorflow:1.14.0-py3-jupyter
+FROM tensorflow/tensorflow:1.14.0-py3
 
 ENV TZ=Europe/Moscow
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
