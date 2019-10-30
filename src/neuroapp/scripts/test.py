@@ -26,8 +26,8 @@ def test_func(file_name):
 
     input_name = "import/" + input_layer
     output_name = "import/" + output_layer
-    input_operation = graph.get_operation_by_name(input_name);
-    output_operation = graph.get_operation_by_name(output_name);
+    input_operation = graph.get_operation_by_name(input_name)
+    output_operation = graph.get_operation_by_name(output_name)
 
     with tf.Session(graph=graph) as sess:
         start = time.time()
@@ -36,15 +36,13 @@ def test_func(file_name):
         end = time.time()
     results = np.squeeze(results)
 
-    print('RESULUT: {}'.format(results))
-
     top_k = results.argsort()[-5:][::-1]
     labels = load_labels(label_file)
 
-    #template = "{} (score={:0.5f})"
+    template = "{} (score={:0.5f})"
     neuro_evaluate = {}
-    #for i in top_k:
-    #    neuro_evaluate.update({labels[i]: results[i]})
-    #    #print(template.format(labels[i], results[i]))
+    for i in top_k:
+        neuro_evaluate.update({labels[i]: results[i]})
+        #print(template.format(labels[i], results[i]))
 
     return neuro_evaluate
