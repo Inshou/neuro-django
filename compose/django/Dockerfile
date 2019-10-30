@@ -23,17 +23,17 @@ RUN apt-get update && apt-get install -y \
     libjpeg8 \
     zlib1g
 # un-comment the following two dependecies if you want to add library like pandas, scipy and numpy
-# openblas \ 
-# libstdc++ 
+# openblas \
+# libstdc++
 
-# Installing temporary packages required for installing requirements.pip 
+# Installing temporary packages required for installing requirements.pip
 #RUN apk add --no-cache --virtual build-deps \
-RUN apt-get install -y gcc \  
-    python3-dev \ 
+RUN apt-get install -y gcc \
+    python3-dev \
     musl-dev \
     postgresql-server-dev-all \
     zlib1g-dev \
-    libjpeg8-dev 
+    libjpeg8-dev
 
 # un-comment if you want to install numpy, pandas, scipy etc and their supported dependencies
 # g++ \
@@ -68,4 +68,4 @@ RUN find -type d -name __pycache__ -prune -exec rm -rf {} \; && \
 
 
 # CMD will run when this dockerfile is running
-CMD ["sh", "-c", "python manage.py collectstatic --no-input; python manage.py migrate; python manage.py makemigrations neuroapp;  gunicorn neuro.wsgi -b 0.0.0.0:8000"]
+CMD ["sh", "-c", "python manage.py collectstatic --no-input; python manage.py makemigrations neuroapp; python manage.py migrate; gunicorn neuro.wsgi -b 0.0.0.0:8000"]
