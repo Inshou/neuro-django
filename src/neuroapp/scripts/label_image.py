@@ -33,8 +33,9 @@ def load_graph(model_file):
   with open(model_file, "rb") as f:
     fileContent = f.read()
 
-  print("FILE TO PARSE {}".format(fileContent))
+  print("BEFORE MODEL PARSE")
   graph_def.ParseFromString(fileContent)
+  print("AFTER MODEL PARSE")
 
   with graph.as_default():
     tf.import_graph_def(graph_def)
