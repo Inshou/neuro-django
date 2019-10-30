@@ -26,15 +26,17 @@ import tensorflow as tf
 
 def load_graph(model_file):
   graph = tf.Graph()
-  graph_def = tf.GraphDef()
+  graph_def = tf.compat.v1.GraphDef()
 
   print("label_image.py >> graph_def {}".format(graph_def))
 
   with open(model_file, "rb") as f:
     graph_def.ParseFromString(f.read())
+    print('Load file >> {}'.format(f.read())
   with graph.as_default():
     tf.import_graph_def(graph_def)
 
+  print('graph >> {}'.format(graph))
   return graph
 
 def read_tensor_from_image_file(file_name, input_height=299, input_width=299,

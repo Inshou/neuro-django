@@ -16,23 +16,20 @@ def test_func(file_name):
     input_std = 255
     input_layer = "Mul"
     output_layer = "final_result"
-    print('BEFORE LOAD GRAPH {} {} {} {} {} {} {} {}'.format(model_file, label_file, input_height, input_width, input_mean, input_std, input_layer, output_layer))
+
+    print('BEFORE LOAD GRAPH >> '.format(model_file))
     graph = load_graph(model_file)
 
-    print('MODEL FILE: {}'.format(model_file))
     t = read_tensor_from_image_file(file_name,
                                     input_height=input_height,
                                     input_width=input_width,
                                     input_mean=input_mean,
                                     input_std=input_std)
-    print('READ TF FROM IMAGE FILE: {}'.format(t))
 
     input_name = "import/" + input_layer
     output_name = "import/" + output_layer
     input_operation = graph.get_operation_by_name(input_name)
-    print('INPUT: {}'.format(input_name))
     output_operation = graph.get_operation_by_name(output_name)
-    print('OUTPUT: {}'.format(output_name))
     with tf.Session(graph=graph) as sess:
         start = time.time()
         results = sess.run(output_operation.outputs[0],
