@@ -31,8 +31,11 @@ def load_graph(model_file):
   print("label_image.py >> graph_def {}".format(graph_def))
 
   with open(model_file, "rb") as f:
-    graph_def.ParseFromString(f.read())
-  print("after file read")
+    fileContent = f.read()
+
+  print("FILE TO PARSE {}".format(fileContent))
+  graph_def.ParseFromString(fileContent)
+
   with graph.as_default():
     tf.import_graph_def(graph_def)
 
