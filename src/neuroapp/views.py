@@ -32,8 +32,8 @@ def index(request):
 def result(request):
     if request.method == "POST":
         image_name = request.POST['image_name']
-        old_name = settings.MEDIA_ROOT + "\\" + image_name
-        new_name = settings.MEDIA_ROOT + "\\" + request.POST['answer'] + "\\" + image_name
+        old_name = settings.MEDIA_ROOT + "/" + image_name
+        new_name = settings.MEDIA_ROOT + "/" + request.POST['answer'] + "/" + image_name
         shutil.copyfile(old_name, new_name)
         str = "Файл сохранен в: /media/" + request.POST['answer'] + "/" + image_name + " c вероятностью 100%." \
                                                                                         " Спасибо за обучение сети!"
